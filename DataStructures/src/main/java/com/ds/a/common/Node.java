@@ -1,7 +1,7 @@
 /*
  * @author Janardhan Sharma 
  */
-package com.ds.a.linkedlist;
+package com.ds.a.common;
 
 /**
  * The Class Node.

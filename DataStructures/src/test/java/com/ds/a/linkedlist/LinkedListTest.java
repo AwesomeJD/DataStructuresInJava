@@ -11,6 +11,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.ds.a.common.Node;
+
 /**
  * The Class LinkedListTest.
  */
@@ -69,6 +71,20 @@ public class LinkedListTest {
 		// then
 		list.traverse();
 		assertThat(list.size(), is(equalTo(1)));
+	}
+
+	/**
+	 * Test linked list remove on empty list.
+	 */
+	@Test
+	public void test_linked_list_remove_on_empty_list() {
+		// given
+
+		// when
+		list.remove(6);
+
+		// then
+		assertThat(list.size(), is(equalTo(0)));
 	}
 
 	/**

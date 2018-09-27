@@ -3,6 +3,8 @@
  */
 package com.ds.a.linkedlist;
 
+import com.ds.a.common.Node;
+
 /**
  * The Class LinkedList.
  *
