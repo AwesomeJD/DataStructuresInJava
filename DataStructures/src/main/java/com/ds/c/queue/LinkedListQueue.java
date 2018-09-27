@@ -1,7 +1,15 @@
+/*
+ * @author Janardhan Sharma 
+ */
 package com.ds.c.queue;
 
 import com.ds.a.common.Node;
 
+/**
+ * The Class LinkedListQueue.
+ *
+ * @param <T> the generic type
+ */
 public class LinkedListQueue<T> implements Queue<T> {
 
 	// Two nodes because we need a start and end of the linked list to be able to go
@@ -10,8 +18,14 @@ public class LinkedListQueue<T> implements Queue<T> {
 	// N -> N -> N -> N -> N
 	// HEAD................TAIL
 	// In Singly linked list the head and tail meanings are a little reversed.
+
+	/** The add. */
 	private Node<T> add;
+
+	/** The remove. */
 	private Node<T> remove;
+
+	/** The size. */
 	private Integer size = 0;
 
 	/*

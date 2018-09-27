@@ -1,5 +1,13 @@
+/*
+ * @author Janardhan Sharma 
+ */
 package com.ds.b.stack;
 
+/**
+ * The Interface Stack.
+ *
+ * @param <T> the generic type
+ */
 public interface Stack<T> {
 
 	/**
@@ -29,5 +37,12 @@ public interface Stack<T> {
 	 * @return the integer
 	 */
 	Integer size();
+	
+	/**
+	 * Checks if is empty.
+	 *
+	 * @return the boolean
+	 */
+	Boolean isEmpty();
 
 }

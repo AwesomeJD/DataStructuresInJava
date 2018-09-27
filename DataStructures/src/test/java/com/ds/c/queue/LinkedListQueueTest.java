@@ -1,3 +1,6 @@
+/*
+ * @author Janardhan Sharma 
+ */
 package com.ds.c.queue;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -6,9 +9,13 @@ import static org.hamcrest.Matchers.is;
 
 import org.junit.Test;
 
+/**
+ * The Class LinkedListQueueTest.
+ */
 public class LinkedListQueueTest {
+	
 	/**
-	 * Test stack push method.
+	 * Test queue push method.
 	 */
 	@Test
 	public void test_queue_push_method() {
@@ -23,7 +30,7 @@ public class LinkedListQueueTest {
 	}
 
 	/**
-	 * Test stack pop method.
+	 * Test queue poll method.
 	 */
 	@Test
 	public void test_queue_poll_method() {
@@ -44,7 +51,7 @@ public class LinkedListQueueTest {
 	}
 
 	/**
-	 * Test stack pop on empty.
+	 * Test poll on empty.
 	 */
 	@Test
 	public void test_poll_on_empty() {

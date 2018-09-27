@@ -6,7 +6,7 @@ package com.ds.b.stack;
 import com.ds.a.common.Node;
 
 /**
- * The Class Stack.
+ * The Class LinkedListStack.
  *
  * @param <T> the generic type
  */
@@ -14,12 +14,13 @@ public class LinkedListStack<T> implements Stack<T> {
 
 	/** The root. */
 	private Node<T> root;
-	
+
 	/** The size. */
 	private Integer size = 0;
 
-	
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.ds.b.stack.Stack#push(T)
 	 */
 	@Override
@@ -33,7 +34,9 @@ public class LinkedListStack<T> implements Stack<T> {
 		newNode = null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.ds.b.stack.Stack#pop()
 	 */
 	@Override
@@ -46,7 +49,9 @@ public class LinkedListStack<T> implements Stack<T> {
 		return toReturn;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.ds.b.stack.Stack#peek()
 	 */
 	@Override
@@ -54,12 +59,22 @@ public class LinkedListStack<T> implements Stack<T> {
 		return this.root.getValue();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.ds.b.stack.Stack#size()
 	 */
 	@Override
 	public Integer size() {
 		return this.size;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.ds.b.stack.Stack#isEmpty()
+	 */
+	@Override
+	public Boolean isEmpty() {
+		return size == 0 ? Boolean.TRUE : Boolean.FALSE;
 	}
 
 }
