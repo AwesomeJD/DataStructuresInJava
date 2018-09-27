@@ -20,7 +20,7 @@ public class StackTest {
 	@Test
 	public void test_stack_push_method() {
 		// given
-		Stack<Integer> stack = new Stack<>();
+		Stack<Integer> stack = new LinkedListStack<>();
 		// when
 		stack.push(5);
 		stack.push(6);
@@ -35,7 +35,7 @@ public class StackTest {
 	@Test
 	public void test_stack_pop_method() {
 		// given
-		Stack<Integer> stack = new Stack<>();
+		Stack<Integer> stack = new LinkedListStack<>();
 		// when
 		stack.push(10);
 		stack.push(20);
@@ -51,7 +51,7 @@ public class StackTest {
 	@Test
 	public void test_stack_pop_on_empty() {
 		// given
-		Stack<Integer> stack = new Stack<>();
+		Stack<Integer> stack = new LinkedListStack<>();
 		// when
 
 		// then

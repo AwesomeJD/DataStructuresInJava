@@ -1,75 +1,33 @@
-/*
- * @author Janardhan Sharma 
- */
 package com.ds.b.stack;
 
-import com.ds.a.common.Node;
-
-/**
- * The Class Stack.
- *
- * @param <T> the generic type
- */
-public class Stack<T> {
-
-	/** The root. */
-	private Node<T> root;
-	
-	/** The size. */
-	private Integer size;
-
-	/**
-	 * Instantiates a new stack.
-	 */
-	public Stack() {
-		this.size = 0;
-	}
+public interface Stack<T> {
 
 	/**
 	 * Push.
 	 *
 	 * @param data the data
 	 */
-	public void push(T data) {
-		size++;
-		Node<T> newNode = new Node<>(data);
-		Node<T> currentNode = this.root;
-
-		newNode.setNext(currentNode);
-		this.root = newNode;
-		newNode = null;
-	}
+	void push(T data);
 
 	/**
 	 * Pop.
 	 *
 	 * @return the t
 	 */
-	public T pop() {
-		if (root == null)
-			return null;
-		T toReturn = this.root.getValue();
-		this.root = this.root.getNext();
-		size--;
-		return toReturn;
-	}
+	T pop();
 
 	/**
 	 * Peek.
 	 *
 	 * @return the t
 	 */
-	public T peek() {
-		return this.root.getValue();
-	}
+	T peek();
 
 	/**
 	 * Size.
 	 *
 	 * @return the integer
 	 */
-	public Integer size() {
-		return this.size;
-	}
+	Integer size();
 
 }
