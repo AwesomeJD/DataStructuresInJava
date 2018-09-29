@@ -53,4 +53,11 @@ public interface List<T> {
 	 * @return the integer
 	 */
 	public Integer size();
+	
+	/**
+	 * Gets the list as array.
+	 *
+	 * @return the list as array
+	 */
+	public T[] getListAsArray();
 }

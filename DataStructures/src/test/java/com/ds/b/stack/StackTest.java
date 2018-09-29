@@ -24,9 +24,10 @@ public class StackTest {
 		// when
 		stack.push(5);
 		stack.push(6);
+		stack.push(10);
 
 		// then
-		assertThat(stack.size(), is(equalTo(2)));
+		assertThat(stack.size(), is(equalTo(3)));
 	}
 
 	/**
@@ -39,8 +40,14 @@ public class StackTest {
 		// when
 		stack.push(10);
 		stack.push(20);
-
+		stack.push(200);
+		stack.push(500);
+		stack.push(1000);
+		
 		// then
+		assertThat(stack.pop(), is(equalTo(1000)));
+		assertThat(stack.pop(), is(equalTo(500)));
+		assertThat(stack.pop(), is(equalTo(200)));
 		assertThat(stack.pop(), is(equalTo(20)));
 		assertThat(stack.pop(), is(equalTo(10)));
 	}

@@ -23,6 +23,13 @@ public interface Queue<T> {
 	 * @return the t
 	 */
 	T poll();
+	
+	/**
+	 * Peek.
+	 *
+	 * @return the t
+	 */
+	T peek();
 
 	/**
 	 * Size.

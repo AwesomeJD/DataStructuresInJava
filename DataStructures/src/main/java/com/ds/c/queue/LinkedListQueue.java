@@ -13,8 +13,9 @@ import com.ds.a.common.Node;
 public class LinkedListQueue<T> implements Queue<T> {
 
 	// Two nodes because we need a start and end of the linked list to be able to go
-	// the end to push and to the start to poll
+	// the add to push and to the remove to poll
 	//
+	// add...............remove
 	// N -> N -> N -> N -> N
 	// HEAD................TAIL
 	// In Singly linked list the head and tail meanings are a little reversed.
@@ -67,6 +68,8 @@ public class LinkedListQueue<T> implements Queue<T> {
 		this.remove = temp;
 		temp = null; // Object eligible for garage collection
 		size--;
+		if (size == 0)
+			this.add = null;
 		return returnData;
 	}
 
@@ -88,6 +91,17 @@ public class LinkedListQueue<T> implements Queue<T> {
 	@Override
 	public Boolean isEmpty() {
 		return size == 0 ? Boolean.TRUE : Boolean.FALSE;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.ds.c.queue.Queue#peek()
+	 */
+	@Override
+	public T peek() {
+		if (remove == null)
+			return null;
+
+		return this.remove.getValue();
 	}
 
 }

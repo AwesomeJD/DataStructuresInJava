@@ -13,12 +13,14 @@ import com.ds.a.common.Node;
 public class LinkedList<T> implements List<T> {
 
 	/** The root. */
-	private Node<T> root;
-	
-	/** The size. */
-	private Integer size = 0;
+	protected Node<T> root;
 
-	/* (non-Javadoc)
+	/** The size. */
+	protected Integer size = 0;
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.ds.a.linkedlist.List#add(java.lang.Object)
 	 */
 	@Override
@@ -31,13 +33,14 @@ public class LinkedList<T> implements List<T> {
 			root = newNode;
 		} else {
 			Node<T> tempNode = this.root;
-			tempNode.setNext(newNode);
-			this.root.setNext(newNode);
-			tempNode = null;
+			newNode.setNext(tempNode);
+			this.root = newNode;
 		}
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.ds.a.linkedlist.List#remove(java.lang.Object)
 	 */
 	@Override
@@ -57,7 +60,7 @@ public class LinkedList<T> implements List<T> {
 		// We need two Nodes in a singly linked list to remove a node.
 		// Where as in a doubly linked list one node is enough to remove a node, since
 		// we know previous and next nodes from the current node.
-		
+
 		Node<T> currentNode = this.root;
 		Node<T> nextNode = currentNode.getNext();
 
@@ -74,7 +77,9 @@ public class LinkedList<T> implements List<T> {
 
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.ds.a.linkedlist.List#getNode(java.lang.Object)
 	 */
 	@Override
@@ -82,7 +87,9 @@ public class LinkedList<T> implements List<T> {
 		return getNodeFromValue(value);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.ds.a.linkedlist.List#traverse()
 	 */
 	@Override
@@ -95,7 +102,9 @@ public class LinkedList<T> implements List<T> {
 
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.ds.a.linkedlist.List#isPresent(java.lang.Object)
 	 */
 	@Override
@@ -120,12 +129,31 @@ public class LinkedList<T> implements List<T> {
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.ds.a.linkedlist.List#size()
 	 */
 	@Override
 	public Integer size() {
 		return this.size;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.ds.a.linkedlist.List#getListAsArray()
+	 */
+	@Override
+	public T[] getListAsArray() {
+		T[] returnValue = (T[]) new Object[size];
+		Node<T> currentNode = this.root;
+
+		int counter = 0;
+		while (currentNode != null) {
+			returnValue[counter] = currentNode.getValue();
+			currentNode = currentNode.getNext();
+			counter++;
+		}
+		return returnValue;
 	}
 
 }

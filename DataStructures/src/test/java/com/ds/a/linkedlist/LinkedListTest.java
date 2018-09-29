@@ -3,9 +3,11 @@
  */
 package com.ds.a.linkedlist;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.arrayContainingInAnyOrder;
+import static org.hamcrest.Matchers.arrayWithSize;
 
 import org.junit.After;
 import org.junit.Before;
@@ -151,5 +153,30 @@ public class LinkedListTest {
 		list.traverse();
 		assertThat(node.toString(), is(equalTo("10")));
 	}
+	
+	/**
+	 * Test linked list get elements.
+	 */
+	@Test
+	public void test_linked_list_get_elements() {
+		// given
+		list.add(0);
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		list.add(4);
+		list.add(5);
+		list.add(6);
+		list.add(7);
+		list.add(8);
+		list.add(9);
 
+		// when
+		Object[] array = list.getListAsArray();
+
+		// then
+		list.traverse();
+		assertThat(array, arrayWithSize(10));
+		assertThat(array, arrayContainingInAnyOrder(0,1,2,3,4,5,6,7,8,9));
+	}
 }
