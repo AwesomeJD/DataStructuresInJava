@@ -18,12 +18,27 @@ public class ReverseLinkedList<T> extends LinkedList<T> {
 	 */
 	public void reverse() {
 
-		Node<T> tempNode = this.root;
-		Node<T> lastNode = null;
-		while (tempNode.getNext() != null) {
-			lastNode = tempNode.getNext();
+		if (size() < 2)
+			return;
+
+		int counter = 1;
+		int sizeCounter = super.size();
+
+		Node<T> currentRoot = this.root.getNext();
+		Node<T> newRoot = this.root;
+		newRoot.setNext(null);
+
+		while (counter < sizeCounter) {
+
+			Node<T> temp = currentRoot;
+			currentRoot = temp.getNext();
+			temp.setNext(newRoot);
+			newRoot = temp;
+			counter++;
 		}
-		this.root = lastNode;
+
+		this.root = newRoot;
+
 	}
 
 	/**
@@ -45,8 +60,8 @@ public class ReverseLinkedList<T> extends LinkedList<T> {
 		list.add(8);
 		list.add(9);
 		list.traverse();
-		list.reverse();
 		System.out.println("******************");
+		list.reverse();
 		list.traverse();
 	}
 }
